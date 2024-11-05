@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="style/style.css">
-    <title>Главная</title>
+    <title>Каталог</title>
   </head>
 
   <body class="container">
@@ -43,13 +43,13 @@
         </a>
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a class="navigation__link navigation__link_current" aria-current="page">Главная</a>
+            <a class="navigation__link" href="index.html">Главная</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="#">О Седоне</a>
           </li>
           <li class="navigation__item">
-            <a class="navigation__link" href="catalog.html">Гостиницы</a>
+            <a class="navigation__link navigation__link_current" aria-current="page">Гостиницы</a>
           </li>
         </ul>
         <ul class="navigation__list navigation__list_user">
@@ -83,93 +83,260 @@
       </nav>
     </header>
     <!-- Основной блок страницы -->
-    <main class="index-container" data-test="main">
-      <section class="welcome" data-test="hero">
-        <h1 class="visually-hidden">Добро пожаловать в великолепную Седону</h1>
-        <img class="welcome__title" src="images/welcome-title.svg" width="458" height="352"
-          alt="Welcome to the gorgeous Sedona, because the Grand Canyon sucks!">
-      </section>
-      <!-- Блок с преимуществами -->
-      <section class="advantages" data-test="advantages">
-        <div class="about">
-          <h2 class="about__title title_large">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
-          <p class="about__description description_large">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!
-          </p>
+    <main class="inner-container" data-test="main">
+      <section class="inner-container__filters-group filters-group">
+        <div class="filters-group__wrapper">
+          <h1 class="filters-group__title">Гостиницы Седоны</h1>
+          <ol class="filters-group__breadcrumbs breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="index.html">
+                <svg class="breadcrumbs__icon_home" role="img" aria-label="На главную"
+                  xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 13 13">
+                  <path fill="#fff" d="m6.5.5-6 5.8v6.2h12V6.3L6.5.5Zm5 11h-10V6.7l5-4.8 5 4.8v4.8Z" />
+                  <path fill="#fff" d="M4.5 10.5h1V8h2v2.5h1V7h-4v3.5Z" />
+                </svg>
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <svg class="breadcrumbs__icon_arrow" aria-hidden="true" focusable="false"
+                xmlns="http://www.w3.org/2000/svg" width="8" height="11" fill="none" viewBox="0 0 8 11">
+                <path fill="#fff"
+                  d="M6.92 4.97 2.17.72c-.25-.25-.75-.25-1.13 0-.37.25-.25.75 0 1l4.13 3.75-4 3.75a.76.76 0 0 0 0 1c0 .12.37.25.5.25.12 0 .37-.13.5-.25l4.75-4.25a.59.59 0 0 0 0-1Z" />
+              </svg>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link breadcrumbs__link_title" href="catalog.html">Гостиницы</a>
+            </li>
+          </ol>
         </div>
-        <h2 class="visually-hidden">Преимущества</h2>
-        <ul class="advantages__list">
-          <li class="advantages__item advantages__item_image heavy-color">
-            <div class="advantages__item_wrapper">
-              <h3 class="advantages__title advantages__title_color_secondary">Настоящий городок</h3>
-              <p class="advantages__description">Седона — не аттракцион для туристов, там течёт своя жизнь
-              </p>
+        <div class="filters-group__wrapper" data-test="filter">
+          <h2 class="visually-hidden">Фильтры товаров</h2>
+          <form class="filters-group__form filter" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter__group">
+              <legend class="filter__title">Инфраструктура:</legend>
+              <ul class="filter__list">
+                <li class="filter__item">
+                  <label class="filter__control control" for="pool">
+                    <input class="visually-hidden control__input" type="checkbox" name="pool" id="pool" checked>
+                    <span class="control__mark"></span>
+                    <span class="control__label">Бассейн</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control" for="parking">
+                    <input class="visually-hidden control__input" type="checkbox" name="parking" id="parking" checked>
+                    <span class="control__mark"></span>
+                    <span class="control__label">Парковка</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control" for="wi-fi">
+                    <input class="visually-hidden control__input" type="checkbox" name="wi-fi" id="wi-fi">
+                    <span class="control__mark"></span>
+                    <span class="control__label">Wi-Fi</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filter__group filter__group_type">
+              <legend class="filter__title">Тип Жилья:</legend>
+              <ul class="filter__list">
+                <li class="filter__item">
+                  <label class="filter__control control" for="hotel">
+                    <input class="visually-hidden control__input" type="radio" name="type-housing" value="hotel"
+                      id="hotel" checked>
+                    <span class="control__mark"></span>
+                    <span class="control__label">Гостиница</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control" for="motel">
+                    <input class="visually-hidden control__input" type="radio" name="type-housing" value="motel"
+                      id="motel">
+                    <span class="control__mark"></span>
+                    <span class="control__label">Мотель</span>
+                  </label>
+                </li>
+                <li class="filter__item">
+                  <label class="filter__control control" for="apartments">
+                    <input class="visually-hidden control__input" type="radio" name="type-housing" value="apartments"
+                      id="apartments">
+                    <span class="control__mark"></span>
+                    <span class="control__label">Апартаменты</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filter__group filter__group_price">
+              <legend class="filter__title">Стоимость, ₽:</legend>
+              <div class="filter__price-wrapper price-wrapper">
+                <label class="price-wrapper__label" for="min-price">
+                  <input class="price-wrapper__input price-wrapper__input_left" type="number" placeholder="0"
+                    name="min-price" id="min-price">
+                  <span class="price-wrapper__description">от</span>
+                </label>
+                <label class="price-wrapper__label" for="max-price">
+                  <input class="price-wrapper__input price-wrapper__input_right" type="number" placeholder="9000"
+                    name="max-price" id="max-price">
+                  <span class="price-wrapper__description">до</span>
+                </label>
+              </div>
+              <div class="filter__range range">
+                <div class="range__bar">
+                  <button class="range__toggle range__toggle_min" type="button">
+                    <span class="visually-hidden">Изменить минимальную цену</span>
+                  </button>
+                  <button class="range__toggle range__toggle_max" type="button">
+                    <span class="visually-hidden">Изменить максимальную цену</span>
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+            <div class="filter__buttons-wrapper">
+              <button class="button_apply button button_size_small button_color_secondary"
+                type="submit">Применить</button>
+              <button class="button_cancel button button_size_small" type="reset">Сбросить</button>
             </div>
-            <img class="advantages__photo city-sedona" src="images/city-sedona.jpg" width="800" height="385"
-              alt="Домик на фоне гор.">
-          </li>
-          <li class="advantages__item light-color">
-            <h3 class="advantages__title">Небольшая площадь</h3>
-            <p class="advantages__description">Все достопримечательности находятся очень близко</p>
-          </li>
-          <li class="advantages__item middle-color">
-            <h3 class="advantages__title">Красивая <br> дорога</h3>
-            <p class="advantages__description">Ехать в Седону из Лас-Вегаса <br> совсем не скучно!</p>
-          </li>
-          <li class="advantages__item light-color">
-            <h3 class="advantages__title">Мало <br> туристов</h3>
-            <p class="advantages__description">Большинство едет в Гранд <br> Каньон и толпится там</p>
-          </li>
-          <li class="advantages__item advantages__item_image heavy-color">
-            <img class="advantages__photo devil-bridge" src="images/devil-bridge.jpg" width="800" height="385"
-              alt="Каньон, горы, снова горы.">
-            <div class="advantages__item_wrapper">
-              <h3 class="advantages__title advantages__title_color_secondary">Там есть <br> мост дьявола</h3>
-              <p class="advantages__description">Да, по нему можно пройти! <br> Если вы осмелитесь, <br> разумеется</p>
-            </div>
-          </li>
-        </ul>
+          </form>
+        </div>
       </section>
-      <section class="reasons" data-test="service">
-        <h2 class="reasons__title title_large">Приезжайте в Седону отдохнуть <br> в комфорте и уюте!</h2>
-        <p class="reasons__description description_large">Опытный персонал и качественное обслуживание!</p>
-      </section>
-      <!-- Блок рекомендации -->
-      <section class="recomedation">
-        <ul class="recomendation__list">
-          <li class="recomedation__item light-color ">
-            <span class="recomedation__icon recomedation__icon_house"></span>
-            <h2 class="recomedation__title">Жильё</h2>
-            <p class="recomedation__description">Рекомендуем пожить<br>в настоящем мотеле,<br>всё как в кино!</p>
-          </li>
-          <li class="recomedation__item">
-            <span class="recomedation__icon recomedation__icon_food"></span>
-            <h2 class="recomedation__title">Еда</h2>
-            <p class="recomedation__description">Всегда заказывайте<br> топовый фирменный бургер,<br> вы не
-              разочаруетесь!</p>
-          </li>
-          <li class="recomedation__item light-color ">
-            <span class="recomedation__icon recomedation__icon_gifts"></span>
-            <h2 class="recomedation__title">Сувениры</h2>
-            <p class="recomedation__description">Не только китайского,<br> но и настоящего местного<br> производства!
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- Блок поиска гостинницы -->
-      <section class="search" data-test="search">
-        <h2 class="search__title title_large">Заинтересовались?</h2>
-        <p class="search__description description_large">Укажите предполагаемые даты поездки, <br> и мы покажем вам
-          лучшие предложения
-          гостиниц
-          в Седоне</p>
-        <a class="button_search-room button button_color_primary button_size_large" href="#">Поиск гостиницы в
-          Седоне</a>
+      <section class="catalog" data-test="catalog">
+        <h2 class="visually-hidden">Каталог товаров</h2>
+        <!-- Шапка каталога-->
+        <section class="catalog__display display">
+          <h2 class="display__title">Найдено гостиниц: <span class="catalog-filter-count">38</span>
+          </h2>
+          <select class="display__select-filter" name="select-filter" id="select-filter">
+            <option value="hotel-cheap">Сначала дешевые</option>
+            <option value="hotel-popular">Сначала популярные</option>
+            <option value="hotel-expensive">Сначала дорогие</option>
+          </select>
+          <ul class="display__list">
+            <li class="display___item">
+              <a class="button_tile button_display button_display_selected" href="catalog.html?view=tile">
+                <span class="visually-hidden">Плитками</span>
+              </a>
+            </li>
+            <li class="display___item">
+              <a class="button_fullsize button_display" href="catalog.html?view=card">
+                <span class="visually-hidden">Показать полноразмерные карточки</span>
+              </a>
+            </li>
+            <li class="display___item">
+              <a class="button_list button_display" href="catalog.html?view=list">
+                <span class="visually-hidden">Показать списком</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <!-- Картчоки товаров -->
+        <section class="catalog__products products">
+          <ul class="products__list">
+            <li class="products__card card">
+              <a class="card__link card__link_photo" href="#">
+                <img class="products__image" src="images/catalog/amara-resort-spa.jpg" width="300" height="212"
+                  alt="гостинница Amara Resort & Spa">
+              </a>
+              <a class="card__link card__link_title" href="#" tabindex="-1">
+                <h3 class="card__title">Amara Resort & Spa</h3>
+              </a>
+              <p class="card__hotel">Гостиница</p>
+              <p class="card__price">От 4000 ₽</p>
+              <a class="button_detailed button button_color_primary button_size_small" href="#">Подробнее</a>
+              <button class="button_favourit button button_color_secondary button_size_small" type="submit">В
+                избранное</button>
+              <div class="card__stars stars stars_four-star">
+                <span class="visually-hidden">Отель 4 звезды</span>
+              </div>
+              <p class="card__ratio">Рейтинг: 8,5</p>
+            </li>
+            <li class="products__card card">
+              <a class="card__link card__link_photo" href="#">
+                <img class="products__image" src="images/catalog/villas-at-poco-diablo.jpg" width="300" height="212"
+                  alt="гостинница Villas at Poco Diablo">
+              </a>
+              <a class="card__link card__link_title" href="#" tabindex="-1">
+                <h3 class="card__title">Villas at Poco Diablo</h3>
+              </a>
+              <p class="card__hotel">Гостиница</p>
+              <p class="card__price">От 5000 ₽</p>
+              <a class="button_detailed button button_color_primary button_size_small" href="#">Подробнее</a>
+              <button class="button_favourit button_favourit_selected button button_color_secondary button_size_small"
+                type="submit">В
+                избранном</button>
+              <div class="card__stars stars stars_four-star">
+                <span class="visually-hidden">Отель 4 звезды</span>
+              </div>
+              <p class="card__ratio">Рейтинг: 9,2</p>
+            </li>
+            <li class="products__card card">
+              <a class="card__link card__link_photo" href="#">
+                <img class="products__image" src="images/catalog/desert-quail-inn.jpg" width="300" height="212"
+                  alt="гостинница Desert Quail Inn">
+              </a>
+              <a class="card__link card__link_title" href="#" tabindex="-1">
+                <h3 class="card__title">Desert Quail Inn</h3>
+              </a>
+              <p class="card__hotel">Гостиница</p>
+              <p class="card__price">От 2500 ₽</p>
+              <a class="button_detailed button button_color_primary button_size_small" href="#">Подробнее</a>
+              <button class="button_favourit button button_color_secondary button_size_small" type="submit">В
+                избранное</button>
+              <div class="card__stars stars stars_three-star">
+                <span class="visually-hidden">Отель 3 звезды</span>
+              </div>
+              <p class="card__ratio">Рейтинг: 6,9</p>
+            </li>
+            <li class="products__card card">
+              <a class="card__link card__link_photo" href="#">
+                <img class="products__image" src="images/catalog/gree-tree-inn.jpg" width="300" height="212"
+                  alt="гостинница GreenTree Inn">
+              </a>
+              <a class="card__link card__link_title" href="#" tabindex="-1">
+                <h3 class="card__title">GreenTree Inn</h3>
+              </a>
+              <p class="card__hotel">Гостиница</p>
+              <p class="card__price">От 1500 ₽</p>
+              <a class="button_detailed button button_color_primary button_size_small" href="#">Подробнее</a>
+              <button class="button_favourit button button_color_secondary button_size_small" type="submit">В
+                избранное</button>
+              <div class="card__stars stars stars_two-star">
+                <span class="visually-hidden">Отель 2 звезды</span>
+              </div>
+              <p class="card__ratio">Рейтинг: 5,0</p>
+            </li>
+          </ul>
+        </section>
+        <section class="catalog__pagination pagination">
+          <hr class="pagination__split-line">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link_current" href="#">1</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">2</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">4</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link_more" href="#">...</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">10</a>
+            </li>
+          </ul>
+        </section>
       </section>
       <!-- Блок подписки-->
-      <section class="subscribe" data-test="subscribe">
+      <section class="subscribe subscribe_catalog" data-test="subscribe">
         <div class="subscribe__wrapper">
-          <h2 class="subscribe__title title_large">Подпишитесь на рассылку</h2>
-          <p class="subscribe__description description_large">Только полезная информация и никакого спама, <br> честное
+          <h2 class="subscribe__title title_large subscribe__title_catalog">Подпишитесь на рассылку</h2>
+          <p class="subscribe__description description_large subscribe__title_description">Только полезная информация и
+            никакого спама, <br> честное
             бойскаутское!</p>
         </div>
         <form class="subscribe__form" action="https://echo.htmlacademy.ru/" method="post">
@@ -231,82 +398,6 @@
         </a>
       </section>
     </footer>
-    <!--Модальное окно-->
-    <div class="modal-container visually-hidden">
-      <div class="modal">
-        <button class="button__close button">
-          <svg class="close" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M14 1.29231L12.7077 0L7 5.70769L1.29231 0L0 1.29231L5.70769 7L0 12.7077L1.29231 14L7 8.29231L12.7077 14L14 12.7077L8.29231 7L14 1.29231Z"
-              fill="black" />
-          </svg>
-          <span class="visually-hidden">Закрыть</span>
-        </button>
-        <section class="modal__wrapper">
-          <h2 class="modal__title title_large ">Поиск гостиницы в седоне</h2>
-          <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
-            <div class="search-form__date-group date-group">
-              <div class="date-group__fields">
-                <label class="date-group__label" for="check-in-date">Дата Заезда:</label>
-                <input class="date-group__input" type="text" id="check-in-date" name="check-in-date"
-                  placeholder="27 апреля 2020" required>
-              </div>
-              <p class="date-group__message date-group__message_error">Мы не можем отправить вас в прошлое.</p>
-              <div class="date-group__fields">
-                <label class="date-group__label" for="check-out-date">Дата Выезда:</label>
-                <input class="date-group__input" type="text" id="check-out-date" name="check-out-date"
-                  placeholder="1 сентября 2023" required>
-              </div>
-              <p class="date-group__message">На эти даты есть свободные номера. Пока есть.</p>
-            </div>
-            <div class="search-form__age-group age-group">
-              <div class="age-group__adult">
-                <label class="age-group__label_adult age-group__label" for="adult-count">Взрослые:</label>
-                <div class="age-group__wrapper">
-                  <span class="age-group__minus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 9V11H17V9H3Z" />
-                    </svg>
-                  </span>
-                  <input class="age-group__fields" type="number" id="adult-count" name="adult-count" tabindex="-1"
-                    required value="2">
-                  <span class="age-group__plus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="-3 -3 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div class="age-group__child">
-                <label class="age-group__label_child age-group__label" for="child-count">Дети:</label>
-                <span class="age-group__info" tabindex="0">
-                  <div class="age-group__tooltip">
-                    Укажите количество детей, которые будут с вами, возраст
-                    которых от 6 до 18 лет.
-                    Дети до 6 лет размещаются бесплатно.
-                  </div>
-                </span>
-                <div class="age-group__wrapper">
-                  <span class="age-group__minus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 9V11H17V9H3Z" />
-                    </svg>
-                  </span>
-                  <input class="age-group__fields" type="number" id="child-count" name="child-count" tabindex="-1"
-                    required value="2">
-                  <span class="age-group__plus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="-3 -3 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <button class="button_find-hotel button button_size_large">Найти</button>
-            </div>
-          </form>
-        </section>
-      </div>
-    </div>
   </body>
 
 </html>
