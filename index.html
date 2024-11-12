@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.png" sizes="32x32">
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="style/style.css">
     <title>Главная</title>
   </head>
@@ -266,7 +266,7 @@
 
     <!--Модальное окно (не отображается на главной странице)-->
     <div class="modal-container visually-hidden" data-test="modal">
-      <div class="modal">
+      <div class="modal" data-test="modal">
 
         <!-- Кнопка закрытия модального окна-->
         <button class="button__close button">
@@ -309,14 +309,14 @@
                 <label class="age-group__label_adult age-group__label" for="adult-count">Взрослые:</label>
                 <div class="age-group__wrapper">
                   <span class="age-group__minus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="minus" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M3 9V11H17V9H3Z" />
                     </svg>
                   </span>
                   <input class="age-group__fields" type="number" id="adult-count" name="adult-count" tabindex="-1"
                     required value="2">
                   <span class="age-group__plus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="-3 -3 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="plus" width="20" height="20" viewBox="-3 -3 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" />
                     </svg>
                   </span>
@@ -328,23 +328,23 @@
                 <label class="age-group__label_child age-group__label" for="child-count">Дети:</label>
 
                 <!-- Тултип информирования о количестве детей -->
-                <span class="age-group__info" tabindex="0">
-                  <div class="age-group__tooltip">
+                <div class="age-group__info" tabindex="0">
+                  <p class="age-group__tooltip">
                     Укажите количество детей, которые будут с вами, возраст
                     которых от 6 до 18 лет.
                     Дети до 6 лет размещаются бесплатно.
-                  </div>
-                </span>
+                  </p>
+                </div>
                 <div class="age-group__wrapper">
                   <span class="age-group__minus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="minus" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M3 9V11H17V9H3Z" />
                     </svg>
                   </span>
                   <input class="age-group__fields" type="number" id="child-count" name="child-count" tabindex="-1"
                     required value="2">
                   <span class="age-group__plus age-group__sign" tabindex="0">
-                    <svg width="20" height="20" viewBox="-3 -3 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="plus" width="20" height="20" viewBox="-3 -3 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" />
                     </svg>
                   </span>
