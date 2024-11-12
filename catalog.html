@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.png" sizes="32x32">
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="style/style.css">
     <title>Каталог</title>
   </head>
@@ -118,7 +118,7 @@
               </svg>
             </li>
             <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link breadcrumbs__link_title" href="catalog.html">Гостиницы</a>
+              <a class="breadcrumbs__link breadcrumbs__link_title">Гостиницы</a>
             </li>
           </ol>
         </div>
@@ -238,13 +238,13 @@
           </h2>
 
           <!-- Сортировка по категориям -->
-          <select class="display__select-filter" name="select-filter" id="select-filter">
+          <select class="display__dropdown" name="dropdown" id="dropdown" aria-label="Сортировка по категориям">
             <option value="hotel-cheap">Сначала дешевые</option>
             <option value="hotel-popular">Сначала популярные</option>
             <option value="hotel-expensive">Сначала дорогие</option>
           </select>
 
-          <!-- Спопособ отображения каталога -->
+          <!-- Тип отображения списка товаров -->
           <ul class="display__list">
             <li class="display___item">
               <a class="button_tile button_display button_display_selected" href="catalog.html?view=tile">
@@ -270,11 +270,11 @@
 
             <!-- Карточка отеля Amara Resort & Spa -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#">
+              <a class="card__link_photo" href="#" tabindex="-1">
                 <img class="products__image" src="images/catalog/amara-resort-spa.jpg" width="300" height="212"
                   alt="гостинница Amara Resort & Spa">
               </a>
-              <a class="card__link_title" href="#" tabindex="-1">
+              <a class="card__link_title" href="#">
                 <h3 class="card__title">Amara Resort & Spa</h3>
               </a>
               <div class="card_hotel-wrapper">
@@ -297,11 +297,11 @@
 
             <!-- Карточка отеля Villas at Poco Diablo -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#">
+              <a class="card__link_photo" href="#" tabindex="-1">
                 <img class="products__image" src="images/catalog/villas-at-poco-diablo.jpg" width="300" height="212"
                   alt="гостинница Villas at Poco Diablo">
               </a>
-              <a class="card__link_title" href="#" tabindex="-1">
+              <a class="card__link_title" href="#">
                 <h3 class="card__title">Villas at Poco Diablo</h3>
               </a>
               <div class="card_hotel-wrapper">
@@ -325,11 +325,11 @@
 
             <!-- Карточка отеля Desert Quail Inn -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#">
+              <a class="card__link_photo" href="#" tabindex="-1">
                 <img class="products__image" src="images/catalog/desert-quail-inn.jpg" width="300" height="212"
                   alt="гостинница Desert Quail Inn">
               </a>
-              <a class="card__link_title" href="#" tabindex="-1">
+              <a class="card__link_title" href="#">
                 <h3 class="card__title">Desert Quail Inn</h3>
               </a>
               <div class="card_hotel-wrapper">
@@ -352,11 +352,11 @@
 
             <!-- Карточка отеля GreenTree Inn -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#">
+              <a class="card__link_photo" href="#" tabindex="-1">
                 <img class="products__image" src="images/catalog/gree-tree-inn.jpg" width="300" height="212"
                   alt="гостинница GreenTree Inn">
               </a>
-              <a class="card__link_title" href="#" tabindex="-1">
+              <a class="card__link_title" href="#">
                 <h3 class="card__title">GreenTree Inn</h3>
               </a>
               <div class="card_hotel-wrapper">
@@ -381,6 +381,7 @@
 
         <!-- Пагинация страницы-->
         <section class="catalog__pagination pagination">
+          <h2 class="catalog_title visually-hidden"> Пагинация каталога </h2>
           <hr class="pagination__split-line">
           <ul class="pagination__list">
             <li class="pagination__item">

@@ -17,6 +17,7 @@
 }
 
 :root {
+  /* Цвета */
   --color-dark-primary: #000000;
   --color-dark-secondary: #333333;
   --color-dark-translusent: #0000004D;
@@ -43,8 +44,10 @@
   --color-gray-secondary: #AAAAAA;
   --color-shadow-modal: #00000026;
 
+  /* Радиус */
   --border-radius: 4px;
 
+  /* Шрифты */
   --font-family: "PT Sans", sans-serif;
 }
 
@@ -67,7 +70,7 @@
   color: var(--color-dark-primary);
 }
 
-/* Убираем внешние отступы у элементов c атрибутом class*/
+/* Убираем внешние отступы у элементов c атрибутом class */
 :where(
 h1,
 h2,
@@ -100,7 +103,7 @@ html {
   box-shadow: 0 0 15px 0 var(--color-box-shadow);
 }
 
-/* Базовая стилизация основных кнопок*/
+/* Базовая стилизация основных кнопок */
 .button {
   display: flex;
   flex-wrap: wrap;
@@ -144,7 +147,6 @@ html {
   column-gap: 28px;
   padding: 0 70px;
 }
-
 
 .navigation__link-logo {
   z-index: 1;
@@ -190,14 +192,18 @@ html {
   color: var(--color-primary-hover);
 }
 
-.navigation__link_user{
+.navigation__link_user {
   min-width: 44px;
   min-height: 64px;
   margin: 0;
 }
 
-.icon{
+.icon {
   fill: var(--color-dark-primary);
+}
+
+.navigation__link_user:hover .icon {
+  fill: var(--color-primary-hover);
 }
 
 /* Стилизация для элемента навигации, обозначающего текущую страницу */
@@ -215,7 +221,7 @@ html {
   color: inherit;
 }
 
-/* Стилизация счетчика избранных отелей*/
+/* Стилизация счетчика избранных отелей */
 .selected-counter {
   position: absolute;
   top: 11px;
@@ -235,16 +241,18 @@ html {
   border-radius: 50%;
 }
 
-/* Стилизация кнопки хочу сюда*/
+/* Стилизация кнопки хочу сюда */
 .button_whant-to {
   width: 160px;
   min-height: 36px;
   margin-left: 20px;
 }
 
-.button_whant-to:hover,
+.button_whant-to:hover {
+  background-color: var(--color-primary-hover);
+}
+
 .button_whant-to:focus {
-  outline: transparent;
   background-color: var(--color-primary-hover);
 }
 
@@ -257,10 +265,6 @@ html {
   background-color: var(--color-elements);
   user-select: none;
   pointer-events: none;
-}
-
-.navigation__link_user:hover .icon {
-  fill: var(--color-primary-hover);
 }
 
 /* Основной блок страницы */
@@ -342,18 +346,6 @@ html {
   color: var(--color-light);
 }
 
-.light-color {
-  background-color: var(--color-secondary-light);
-}
-
-.middle-color {
-  background-color: var(--color-secondary-middle);
-}
-
-.heavy-color {
-  background-color: var(--color-secondary);
-}
-
 .advantages__photo {
   object-fit: cover;
 }
@@ -392,6 +384,19 @@ html {
   border-bottom: 2px solid var(--color-light-gray);
 }
 
+/* Стилизация фона у блоков преимущества и рекомендации */
+.light-color {
+  background-color: var(--color-secondary-light);
+}
+
+.middle-color {
+  background-color: var(--color-secondary-middle);
+}
+
+.heavy-color {
+  background-color: var(--color-secondary);
+}
+
 /* Стилизация рекомендаций */
 .recomendation__list {
   display: flex;
@@ -419,7 +424,6 @@ html {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-
 }
 
 .recomedation__icon_food {
@@ -489,17 +493,6 @@ html {
   background-color: var(--color-primary-hover);
 }
 
-@supports selector(:focus-visible) {
-
-  .button_search-room:focus {
-    outline: transparent;
-  }
-
-  .button_search-room:focus-visible {
-    background-color: var(--color-primary-hover);
-  }
-}
-
 .button_search-room:active {
   color: var(--color-light-gray);
 }
@@ -557,12 +550,17 @@ html {
   outline: transparent;
 }
 
+.subscribe__field:focus {
+  outline: 2px solid var(--color-dark-primary);
+  outline-offset: -2px;
+}
+
 .subscribe__field::placeholder {
   font-size: 18px;
   line-height: 24px;
 }
 
-/* Стилизация кнопки подписки*/
+/* Стилизация кнопки подписки */
 .button_subscribe {
   width: 232px;
   min-height: 52px;
@@ -573,17 +571,6 @@ html {
 .button_subscribe:hover,
 .button_subscribe:focus {
   background-color: var(--color-secondary-hover);
-}
-
-@supports selector(:focus-visible) {
-
-  .button_subscribe:focus {
-    outline: transparent;
-  }
-
-  .button_subscribe:focus-visible {
-    background-color: var(--color-secondary-hover);
-  }
 }
 
 .button_subscribe:active {
@@ -644,18 +631,7 @@ html {
   color:var(--color-light);
 }
 
-.breadcrumbs__link_title:hover {
-  opacity: 60%;
-}
-.breadcrumbs__link_title:focus {
-  outline: transparent;
-}
-
-.breadcrumbs__link_title:active {
-  opacity: 30%;
-}
-
-/* Убираем стилизацию стрелочками для типа number*/
+/* Убираем стилизацию стрелочками для типа number */
 input[type="number"] {
 	-moz-appearance: textfield;
 	-webkit-appearance: textfield;
@@ -788,6 +764,7 @@ input[type="number"]::-webkit-inner-spin-button {
   content: "";
 }
 
+/* Фильтр с ценами */
 .filter__price-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -833,19 +810,6 @@ input[type="number"]::-webkit-inner-spin-button {
   outline: 3px solid var(--color-secondary);
 }
 
-@supports selector(:focus-visible) {
-
-  .price-wrapper__input_left:focus {
-    outline: transparent;
-  }
-
-  .price-wrapper__input_left:focus-visible {
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-    outline: 3px solid var(--color-secondary);
-  }
-}
-
 .price-wrapper__input_right {
   margin-left: 2px;
   padding: 12px 51px 12px 20px;
@@ -859,20 +823,7 @@ input[type="number"]::-webkit-inner-spin-button {
   outline: 3px solid var(--color-secondary);
 }
 
-@supports selector(:focus-visible) {
-
-  .price-wrapper__input_right:focus {
-    outline: transparent;
-  }
-
-  .price-wrapper__input_right:focus-visible {
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    outline: 3px solid var(--color-secondary);
-  }
-}
-
-.price-wrapper__description{
+.price-wrapper__description {
   position: absolute;
   top: 30%;
   right: 13%;
@@ -882,7 +833,7 @@ input[type="number"]::-webkit-inner-spin-button {
   color: var(--color-gray-secondary);
 }
 
-/* Слайдер цены*/
+/* Слайдер цены */
 .range {
   position: relative;
   left: 1px;
@@ -932,7 +883,8 @@ input[type="number"]::-webkit-inner-spin-button {
   top: -8px;
   right: -1px;
 }
-/* Стилизация кнопок в блоке фильтры*/
+
+/* Стилизация кнопок в блоке фильтры */
 .filter__buttons-wrapper {
   position: relative;
   left: 1px;
@@ -951,17 +903,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .button_apply:hover,
 .button_apply:focus {
   background-color: var(--color-secondary-hover);
-}
-
-@supports selector(:focus-visible) {
-
-  .button_apply:focus {
-    outline: transparent;
-  }
-
-  .button_apply:focus-visible {
-    background-color: var(--color-secondary-hover);
-  }
 }
 
 .button_apply:active {
@@ -998,18 +939,6 @@ input[type="number"]::-webkit-inner-spin-button {
   outline: 3px solid var(--color-secondary);
 }
 
-@supports selector(:focus-visible) {
-
-  .button_cancel:focus {
-    outline: transparent;
-  }
-
-  .button_cancel:focus-visible {
-    border-radius: var(--border-radius);
-    outline: 3px solid var(--color-secondary);
-  }
-}
-
 .button_cancel:active {
   opacity: 60%;
 }
@@ -1021,6 +950,7 @@ input[type="number"]::-webkit-inner-spin-button {
   pointer-events: none;
 }
 
+/* Стилизация каталога */
 .catalog {
   margin: 0;
   padding: 50px 70px 60px 70px;
@@ -1044,7 +974,8 @@ input[type="number"]::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-.display__select-filter {
+/* Стилизация раскрывающегося списка */
+.display__dropdown {
   width: 292px;
   max-height: 49px;
   padding: 12px 18px;
@@ -1066,18 +997,19 @@ input[type="number"]::-webkit-inner-spin-button {
   appearance: none;
 }
 
-.display__select-filter:hover,
-.display__select-filter:focus {
+.display__dropdown:hover,
+.display__dropdown:focus {
   outline: 2px solid var(--color-secondary-hover);
   outline-offset: -2px;
 }
 
-.display__select-filter:disabled {
+.display__dropdown:disabled {
   opacity: 30%;
   user-select: none;
   pointer-events: none;
 }
 
+/* Типы отображения списка товаров */
 .display__list {
   display: flex;
   flex-wrap: wrap;
@@ -1110,18 +1042,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .button_display:focus {
   outline: 2px solid var(--color-secondary-hover);
   outline-offset: -2px;
-}
-
-@supports selector(:focus-visible) {
-
-  .button_display:focus {
-    outline: transparent;
-  }
-
-  .button_display:focus-visible {
-    outline: 2px solid var(--color-secondary-hover);
-    outline-offset: -2px;
-  }
 }
 
 .button_display_selected {
@@ -1181,7 +1101,16 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-bottom: auto;
 }
 
-.card__title{
+.card__link_title:focus {
+  outline: transparent;
+}
+
+.card__link_title:focus .card__title {
+  outline: 2px solid var(--color-dark-primary);
+  border-radius: var(--border-radius);
+}
+
+.card__title {
   font-family: var(--font-family);
   font-style: normal;
   font-size: 24px;
@@ -1205,7 +1134,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: 400;
 }
 
-/* Кнопка подробнее*/
+/* Кнопка подробнее */
 .button_detailed {
   max-width: 140px;
   padding: 8px 27px;
@@ -1215,17 +1144,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .button_detailed:hover,
 .button_detailed:focus {
   background-color: var(--color-primary-hover);
-}
-
-@supports selector(:focus-visible) {
-
-  .button_detailed:focus {
-    outline: transparent;
-  }
-
-  .button_detailed:focus-visible {
-    background-color: var(--color-primary-hover);
-  }
 }
 
 .button_detailed:active {
@@ -1239,7 +1157,7 @@ input[type="number"]::-webkit-inner-spin-button {
   pointer-events: none;
 }
 
-/* Кнопка избранное*/
+/* Кнопка избранное */
 .button_favourit {
   max-width: 140px;
   margin-left: auto;
@@ -1250,17 +1168,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .button_favourit:hover,
 .button_favourit:focus {
   background-color: var(--color-secondary-hover);
-}
-
-@supports selector(:focus-visible) {
-
-  .button_favourit:focus {
-    outline: transparent;
-  }
-
-  .button_favourit:focus-visible {
-    background-color: var(--color-secondary-hover);
-  }
 }
 
 .button_favourit:active {
@@ -1274,7 +1181,7 @@ input[type="number"]::-webkit-inner-spin-button {
   pointer-events: none;
 }
 
-/* Кнопка избранное - выбранна*/
+/* Кнопка избранное - выбранна */
 .button_favourit_selected {
   min-width: 140px;
   padding: 8px 18px;
@@ -1284,17 +1191,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .button_favourit_selected:hover,
 .button_favourit_selected:focus {
   background-color: var(--color-selected-hover);
-}
-
-@supports selector(:focus-visible) {
-
-  .button_favourit_selected:focus {
-    outline: transparent;
-  }
-
-  .button_favourit_selected:focus-visible {
-    background-color: var(--color-selected-hover);
-  }
 }
 
 .button_favourit_selected:active {
@@ -1308,8 +1204,8 @@ input[type="number"]::-webkit-inner-spin-button {
   pointer-events: none;
 }
 
+/* Стлизация элементов звезды */
 .stars {
-  grid-area: "Stars";
   display: block;
   width: 140px;
   min-height: 37px;
@@ -1339,7 +1235,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .card__ratio {
-  grid-area: "Ratio";
   width: 140px;
   min-height: 37px;
   margin-left: auto;
@@ -1354,13 +1249,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: var(--border-radius);
 }
 
-/* Стилизация пагинации*/
-.pagination__split-line{
+/* Стилизация пагинации */
+.pagination__split-line {
   margin-bottom: 39px;
   border:none;
   border-bottom: 1px solid var(--color-box-border);
 }
-
 
 .pagination__list {
   display: grid;
@@ -1405,6 +1299,10 @@ input[type="number"]::-webkit-inner-spin-button {
   outline-offset: -1px;
 }
 
+.pagination__link:focus {
+  box-shadow: 0 0 0 2px black;
+}
+
 .pagination__link:active {
   color: var(--color-light-gray);
 }
@@ -1424,14 +1322,17 @@ input[type="number"]::-webkit-inner-spin-button {
   color: var(--color-dark-primary);
   outline: transparent;
 }
+
+/* Подписка на странцие каталог */
 .subscribe_catalog {
   background-color: transparent;
   background-image: none;
 }
 
-.subscribe__title_catalog{
+.subscribe__title_catalog {
   color: var(--color-dark-primary);
 }
+
 .subscribe__title_description {
   color: var(--color-dark-secondary);
 }
@@ -1469,10 +1370,6 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 13px;
 }
 
-.contacts__link:focus {
-  outline: transparent;
-}
-
 .contacts__icon_yt,
 .contacts__icon_tg {
   margin-top: 3px;
@@ -1485,17 +1382,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .contacts__link:hover .contacts__icon,
 .contacts__link:focus .contacts__icon {
   fill: var(--color-secondary-hover);
-}
-
-@supports selector(:focus-visible) {
-
-  .contacts__link:focus .contacts__icon {
-    outline: transparent;
-  }
-
-  .contacts__link:focus-visible .contacts__icon {
-    fill: var(--color-secondary-hover);
-  }
 }
 
 .contacts__link:active .contacts__icon {
@@ -1518,20 +1404,13 @@ input[type="number"]::-webkit-inner-spin-button {
   text-decoration: none;
 }
 
-.contacts__phone:hover,
-.contacts__phone:focus {
+.contacts__phone:hover {
   color: var(--color-primary);
 }
 
-@supports selector(:focus-visible) {
-
-  .contacts__phone:focus {
-    outline: transparent;
-  }
-
-  .contacts__phone:focus-visible {
-    color: var(--color-primary);
-  }
+.contacts__phone:focus {
+  outline: 2px solid var(--color-dark-primary);
+  color: var(--color-primary);
 }
 
 .contacts__phone:active {
@@ -1548,31 +1427,16 @@ input[type="number"]::-webkit-inner-spin-button {
   color: var(--color-primary-active);
 }
 
-.contacts__author-logo:focus {
-  outline: transparent;
-}
-
-.contacts__author-logo svg {
+.contacts__author-logo .contacts__logo {
   fill: var(--color-dark-primary);
 }
 
-.contacts__author-logo:hover svg,
-.contacts__author-logo:focus svg {
+.contacts__author-logo:hover .contacts__logo,
+.contacts__author-logo:focus .contacts__logo {
   fill: var(--color-primary);
 }
 
-@supports selector(:focus-visible) {
-
-  .contacts__author-logo:focus svg {
-    outline: transparent;
-  }
-
-  .contacts__author-logo:focus-visible svg {
-    fill: var(--color-primary);
-  }
-}
-
-/* Стилизация модального окна*/
+/* Стилизация модального окна */
 .modal-container {
   position: fixed;
   top: 0;
@@ -1617,7 +1481,7 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: var(--color-box-border);
 }
 
-.button__close:active svg {
+.button__close:active .close {
   opacity: 30%;
   background-color: var(--color-box-border);
 }
@@ -1628,6 +1492,7 @@ input[type="number"]::-webkit-inner-spin-button {
   text-align: left;
 }
 
+/* Блок с полями дата в модальном окне */
 .date-group__fields {
   position: relative;
   display: flex;
@@ -1680,11 +1545,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border: none;
   border-radius: var(--border-radius);
 }
+
 .date-group__input:hover {
   background-color: var(--color-box-border);
 }
 
-.date-group__input:focus{
+.date-group__input:focus {
   outline: 3px solid var(--color-secondary);
 }
 
@@ -1724,7 +1590,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 
-
+/* Блок с полями возраста в модальном окне */
 .search-form__age-group {
   display: flex;
   flex-wrap: wrap;
@@ -1791,9 +1657,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .age-group__info:focus {
-  outline: transparent;
+  outline: 2px solid var(--color-dark-primary);
 }
 
+/* Тултип информирования о количестве детей  */
 .age-group__tooltip {
   position: absolute;
   top: 41px;
@@ -1813,7 +1680,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   background-color: var(--color-dark-secondary);
   border-radius: 10px;
   box-shadow: 0 15px 30px 0 var(--color-dark-translusent);
-
 }
 
 .age-group__tooltip::before {
@@ -1851,35 +1717,36 @@ input[type=date]::-webkit-calendar-picker-indicator {
   left: 0;
 }
 
-.age-group__plus svg,
-.age-group__minus svg{
+.age-group__plus .plus,
+.age-group__minus .minus {
   fill: var(--color-primary-active);
   outline: transparent;
 }
 
-.age-group__plus:hover svg,
-.age-group__minus:hover svg{
+.age-group__plus:hover .plus,
+.age-group__minus:hover .minus {
   fill: var(--color-dark-primary);
   outline: transparent;
 }
 
 .age-group__plus:focus,
-.age-group__minus:focus{
+.age-group__minus:focus {
   outline: transparent;
 }
 
-.age-group__plus:focus svg,
-.age-group__minus:focus svg{
+.age-group__plus:focus .plus,
+.age-group__minus:focus .minus {
   border-radius: 3px;
   outline: 3px solid #82B3D3;
   fill: var(--color-primary-active);
 }
 
-.age-group__plus:active svg,
-.age-group__minus:active svg{
+.age-group__plus:active .plus,
+.age-group__minus:active .minus {
   fill: var(--color-primary-active);
   outline: transparent;
 }
+
 /* Стилизация кнопки поиска отеля*/
 .button_find-hotel {
   width: 100%;
@@ -1895,17 +1762,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   background-color: var(--color-secondary-hover);
 }
 
-@supports selector(:focus-visible) {
-
-  .button_find-hotel:focus {
-    outline: transparent;
-  }
-
-  .button_find-hotel:focus-visible {
-    background-color: var(--color-secondary-hover);
-  }
-}
-
 .button_find-hotel:active {
   color: var(--color-light-gray);
 }
@@ -1918,6 +1774,21 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 /* Стилизация страницы ошибки 404*/
+.error-container {
+  margin: auto;
+}
+
+.error-image {
+  display: block;
+  max-width: 500px;
+  min-height: 500px;
+  margin: auto;
+  background-image: url("../images/error-404.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .error-description {
   padding: 20px;
   font-family: var(--font-family);
@@ -1927,14 +1798,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
   font-weight: 400;
   color: var(--color-dark-primary);
 }
-.error-image-wrapper {
-  max-width: 500px;
-  max-height: 500px;
-  margin: auto;
-  margin-top: 10%;
-  margin-bottom: 50px;
-}
 
+/* Кнопка вернуться на главную */
 .button_main {
   width: 400px;
   min-height: 60px;
@@ -1952,17 +1817,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   color: var(--color-light);
   background-color: var(--color-secondary-hover);
   border: none;
-}
-
-@supports selector(:focus-visible) {
-
-  .button_main:focus {
-    outline: transparent;
-  }
-
-  .button_main:focus-visible {
-    background-color: var(--color-secondary-hover);
-  }
 }
 
 .button_main:active {
