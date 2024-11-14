@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style/style.css">
     <title>Каталог</title>
   </head>
@@ -116,8 +117,6 @@
                 <path fill="#fff"
                   d="M6.92 4.97 2.17.72c-.25-.25-.75-.25-1.13 0-.37.25-.25.75 0 1l4.13 3.75-4 3.75a.76.76 0 0 0 0 1c0 .12.37.25.5.25.12 0 .37-.13.5-.25l4.75-4.25a.59.59 0 0 0 0-1Z" />
               </svg>
-            </li>
-            <li class="breadcrumbs__item">
               <a class="breadcrumbs__link breadcrumbs__link_title">Гостиницы</a>
             </li>
           </ol>
@@ -239,16 +238,16 @@
 
           <!-- Сортировка по категориям -->
           <select class="display__dropdown" name="dropdown" id="dropdown" aria-label="Сортировка по категориям">
-            <option value="hotel-cheap">Сначала дешевые</option>
-            <option value="hotel-popular">Сначала популярные</option>
-            <option value="hotel-expensive">Сначала дорогие</option>
+            <option value="display__hotel hotel-cheap">Сначала дешевые</option>
+            <option value="display__hotel hotel-popular">Сначала популярные</option>
+            <option value="display__hotel hotel-expensive">Сначала дорогие</option>
           </select>
 
           <!-- Тип отображения списка товаров -->
           <ul class="display__list">
             <li class="display___item">
               <a class="button_tile button_display button_display_selected" href="catalog.html?view=tile">
-                <span class="visually-hidden">Плитками</span>
+                <span class="visually-hidden">Показать плитками</span>
               </a>
             </li>
             <li class="display___item">
@@ -270,7 +269,7 @@
 
             <!-- Карточка отеля Amara Resort & Spa -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#" tabindex="-1">
+              <a class="card__link_photo" href="#">
                 <img class="products__image" src="images/catalog/amara-resort-spa.jpg" width="300" height="212"
                   alt="гостинница Amara Resort & Spa">
               </a>
@@ -297,7 +296,7 @@
 
             <!-- Карточка отеля Villas at Poco Diablo -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#" tabindex="-1">
+              <a class="card__link_photo" href="#">
                 <img class="products__image" src="images/catalog/villas-at-poco-diablo.jpg" width="300" height="212"
                   alt="гостинница Villas at Poco Diablo">
               </a>
@@ -325,7 +324,7 @@
 
             <!-- Карточка отеля Desert Quail Inn -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#" tabindex="-1">
+              <a class="card__link_photo" href="#">
                 <img class="products__image" src="images/catalog/desert-quail-inn.jpg" width="300" height="212"
                   alt="гостинница Desert Quail Inn">
               </a>
@@ -352,7 +351,7 @@
 
             <!-- Карточка отеля GreenTree Inn -->
             <li class="products__card card">
-              <a class="card__link_photo" href="#" tabindex="-1">
+              <a class="card__link_photo" href="#">
                 <img class="products__image" src="images/catalog/gree-tree-inn.jpg" width="300" height="212"
                   alt="гостинница GreenTree Inn">
               </a>
@@ -420,8 +419,8 @@
           <label class="visually-hidden" for="subscribe-field">Email</label>
           <input class="subscribe__field" placeholder="Ваш e-mail" type="email" name="Email" id="subscribe-field"
             required>
-          <button type="submit"
-            class="button_subscribe button button_color_secondary button_size_large">Подписаться</button>
+          <button class="button_subscribe button button_color_secondary button_size_large"
+            type="submit">Подписаться</button>
         </form>
       </section>
     </main>

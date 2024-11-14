@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style/style.css">
     <title>Главная</title>
   </head>
@@ -197,8 +198,8 @@
           <label class="visually-hidden" for="subscribe-field">Email</label>
           <input class="subscribe__field" placeholder="Ваш e-mail" type="email" name="Email" id="subscribe-field"
             required>
-          <button type="submit"
-            class="button_subscribe button button_color_secondary button_size_large">Подписаться</button>
+          <button class="button_subscribe button button_color_secondary button_size_large"
+            type="submit">Подписаться</button>
         </form>
       </section>
     </main>
@@ -269,7 +270,7 @@
       <div class="modal" data-test="modal">
 
         <!-- Кнопка закрытия модального окна-->
-        <button class="button__close button">
+        <button class="button__close button" type="button">
           <svg class="close" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M14 1.29231L12.7077 0L7 5.70769L1.29231 0L0 1.29231L5.70769 7L0 12.7077L1.29231 14L7 8.29231L12.7077 14L14 12.7077L8.29231 7L14 1.29231Z"
@@ -350,7 +351,7 @@
                   </span>
                 </div>
               </div>
-              <button class="button_find-hotel button button_size_large">Найти</button>
+              <button class="button_find-hotel button button_size_large" type="submit">Найти</button>
             </div>
           </form>
         </section>
